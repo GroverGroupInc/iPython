@@ -1,1 +1,2 @@
-df.Type.unique(). Note Type = the name of the respective column of interest.
+1. Single column: df.Type.unique(). Note Type = the name of the respective column of interest.
+2. Multiple columns: np.unique(df[['Type', 'Star_Rating']])
