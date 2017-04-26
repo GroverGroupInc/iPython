@@ -1,1 +1,4 @@
-df['Type'] = df['Type'].map({'Acute Care Hospitals': 'Acute Care', 'Critical Access Hospitals': 'Critical Access'})
+1. df['Type'] = df['Type'].map({'Acute Care Hospitals': 'Acute Care', 'Critical Access Hospitals': 'Critical Access'})
+2. df['Ownership'] = df['Ownership'].map({'Voluntary non-profit - Private': 'VNP-Private', 
+                                       'Government - Hospital District or Authority': 'GOV-HDA', 
+                                       'Voluntary non-profit - Church': 'VNP-Church'})
