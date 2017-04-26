@@ -1,0 +1,1 @@
+df['Type'] = df['Type'].map({'Acute Care Hospitals': 'Acute Care', 'Critical Access Hospitals': 'Critical Access'})
