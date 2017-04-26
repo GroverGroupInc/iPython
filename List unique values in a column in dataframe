@@ -1,2 +1,4 @@
+Reference: http://stackoverflow.com/questions/26977076/pandas-unique-values-multiple-columns
+
 1. Single column: df.Type.unique(). Note Type = the name of the respective column of interest.
 2. Multiple columns: np.unique(df[['Type', 'Star_Rating']])
