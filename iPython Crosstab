@@ -1,0 +1,1 @@
+HNCT = pd.crosstab('df.Hospital Name', [df.State], margins=True).apply(percConvert, axis=1)
