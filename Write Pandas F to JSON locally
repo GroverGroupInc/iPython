@@ -1,0 +1,5 @@
+Reference: https://stackoverflow.com/questions/33112324/saving-pandas-dataframe-and-meta-data-to-json-format
+f = open('APR282017.json', 'w')
+df.to_json(f)
+f
+#json.dump(metadata, f)
