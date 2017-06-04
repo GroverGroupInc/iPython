@@ -1,0 +1,7 @@
+Reference: https://stackoverflow.com/questions/2792650/python3-error-import-error-no-module-name-urllib2
+Install request 
+import urllib.request
+
+wp = urllib.request.urlopen("http://www.bayesniffer.com")
+pw = wp.read()
+print(pw)
