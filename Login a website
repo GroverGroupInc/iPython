@@ -1,0 +1,12 @@
+import requests
+with requests.Session() as c:
+        url = "https://_________.php"
+        USERNAME = "________"
+        PASSWORD = "________"
+        c.get(url)
+        login_data = dict(username=USERNAME,
+        password=PASSWORD, next='/')
+        c.post(url, data=login_data, headers={"Referer":"HOMEPAGE"})
+        page = c.get("http://________________/")
+        
+        page.content
