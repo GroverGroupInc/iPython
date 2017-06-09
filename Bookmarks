@@ -1,0 +1,25 @@
+
+Reference: https://stackoverflow.com/questions/31616458/how-to-add-bookmark-to-ipython-jupyter-notebook
+
+How to add bookmarks in the Markdown cell:
+
+Somewhere near the top:
+Go to <a href=#bookmark>my bookmark</a>
+Then in a cell near where you left off:
+Left off here <a name='bookmark' />
+(Closing the <a> tag with no content inside stops it looking like a hyperlink)
+
+Example:
+
+One cell:
+
+<a name='Return' />
+<a href=#EventA>Event A</a>
+
+Another cell:
+
+Event A <a name='EventA' />, 
+<a href=#Return>Return</a> 
+
+
+
