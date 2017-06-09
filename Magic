@@ -1,0 +1,63 @@
+References: 
+
+http://nbviewer.jupyter.org/github/ipython/ipython/blob/1.x/examples/notebooks/Cell%20Magics.ipynb
+https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/
+
+
+IPython has a system of commands we call 'magics' that provide effectively a mini command language that is orthogonal to the syntax of Python and is extensible by the user with new commands. Magics are meant to be typed interactively, so they use command-line conventions, such as using whitespace for separating arguments, dashes for options and other conventions typical of a command-line environment.
+
+Magics come in two kinds:
+
+Line magics: these are commands prepended by one % character and whose arguments only extend to the end of the current line.
+Cell magics: these use two percent characters as a marker (%%), and they receive as argument both the current line where they are declared and the whole body of the cell. Note that cell magics can only be used as the first line in a cell, and as a general principle they can't be 'stacked' (i.e. you can only use one cell magic per cell). A few of them, because of how they operate, can be stacked, but that is something you will discover on a case by case basis.
+The %lsmagic magic is used to list all available magics, and it will show both line and cell magics currently defined:
+The %lsmagic magic is used to list all available magics, and it will show both line and cell magics currently defined:
+
+%lsmagic tells you the types
+
+Auto reload extensions:
+
+http://ipython.org/ipython-doc/stable/config/extensions/autoreload.html
+
+#####################
+
+Put this in on e jupyter notebook
+
+data = 'this is the string I want to pass to different notebook'
+%store data
+del data # This has deleted the variable
+
+then... put in another jupyter notebook
+
+%store -r data
+print(data)
+
+######################
+14. IPython Magic - Debugging with %pdb
+Jupyter has own interface for The Python Debugger (pdb). This makes it possible to go inside the function and investigate what happens there.
+
+###################
+21. Running R and Python in the same notebook.
+The best solution to this is to install rpy2 (requires a working version of R as well), which can be easily done with pip:
+pip install rpy2
+You can then use the two languages together, and even pass variables inbetween:
+In [1]:
+%load_ext rpy2.ipython
+In [2]:
+%R require(ggplot2)
+
+
+Out[2]:
+array([1], dtype=int32)
+In [3]:
+import pandas as pd
+df = pd.DataFrame({
+        'Letter': ['a', 'a', 'a', 'b', 'b', 'b', 'c', 'c', 'c'],
+        'X': [4, 3, 5, 2, 1, 7, 7, 5, 9],
+        'Y': [0, 4, 3, 6, 7, 10, 11, 9, 13],
+        'Z': [1, 2, 3, 1, 2, 3, 1, 2, 3]
+    })
+In [4]:
+%%R -i df
+ggplot(data = df) + geom_point(aes(x = X, y= Y, color = Letter, size = Z))
+
