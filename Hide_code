@@ -1,0 +1,14 @@
+Reference: https://github.com/kirbs-/hide_code
+
+The is the protocol for hiding code:
+
+Hide_code
+  Release:  Dev: 
+hide_code is a Jupyter notebook extension to selectively hide code, prompts and outputs with PDF and HTML exporting support.
+
+Installation
+pip install hide_code
+jupyter nbextension install --py hide_code
+jupyter nbextension enable --py hide_code
+jupyter serverextension enable --py hide_code
+Note: add --sys-prefix to jupyter nbextension to install into virtualenv or conda environment.
