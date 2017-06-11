@@ -1,2 +1,3 @@
 Ref: https://codereview.stackexchange.com/questions/43517/working-with-pandas-dataframes-for-stock-backtesting-exercise
 df1 = df[(df['Event_A'] == True) & (df['Event_B'] == True)]
+df1 = df[(df['Event_A'] == True) & (df['Event_B'] == True) & (df['Event_C'] == True)]
