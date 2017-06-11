@@ -1,4 +1,4 @@
-
+HNCT = pd.crosstab('df.Event_C', [df.Event_C], margins=True)
 HNCT = pd.crosstab('df.Hospital Name', [df.State], margins=True).apply(percConvert, axis=1)
 
 CC4 = pd.pivot_table(df,columns=["Event_C"], aggfunc=np.sum,fill_value=0,margins=())
