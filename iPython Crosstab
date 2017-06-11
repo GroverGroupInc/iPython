@@ -1,5 +1,13 @@
 
 HNCT = pd.crosstab('df.Event_C', [df.Event_C], margins=True)
+
+################################################################
+When using convert, it must be entered as a definition:
+
+1. def percConvert(ser): return ser/float(ser[2]). Note, ser[] cn take different arguments depending which elemts in the df you want standardized.
+2. pd.crosstab([df.Event_A], df.Event_B, margins=True).apply(percConvert, axis=1)
+################################################################
+
 HNCT = pd.crosstab('df.Hospital Name', [df.State], margins=True).apply(percConvert, axis=1)
 
 CC4 = pd.pivot_table(df,columns=["Event_C"], aggfunc=np.sum,fill_value=0,margins=())
